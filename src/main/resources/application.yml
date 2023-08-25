@@ -13,6 +13,12 @@ spring:
               args:
                 regexp: /user-service/**
           uri: lb://user-service
+        - id: file-service
+          predicates:
+            - name: Path
+              args:
+                regexp: /file-service/**
+          uri: lb://file-service
 
 server:
   port: 9999
