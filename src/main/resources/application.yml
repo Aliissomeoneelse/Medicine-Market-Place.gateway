@@ -13,12 +13,20 @@ spring:
               args:
                 regexp: /user-service/**
           uri: lb://user-service
+
         - id: file-service
           predicates:
             - name: Path
               args:
                 regexp: /file-service/**
           uri: lb://file-service
+
+        - id: order-service
+          predicates:
+            - name: Path
+              args:
+                regexp: /order-service/**
+          uri: lb://order-service
 
 server:
   port: 9999
@@ -30,4 +38,4 @@ eureka:
   instance:
     preferIpAddress: true
 
-    #todo: http://localhost:9999/user-service/user/get
+    #todo: http://localhost:9999/user-service/user/get/1
