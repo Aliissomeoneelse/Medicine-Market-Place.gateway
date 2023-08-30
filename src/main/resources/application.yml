@@ -41,6 +41,13 @@ spring:
               args:
                 regexp: /medical-service/**
           uri: lb://medical-service
+
+        - id: centre-service
+          predicates:
+            - name: Path
+              args:
+                regexp: /centre-service/**
+          uri: lb://centre-service
 server:
   port: 9999
 
