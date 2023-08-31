@@ -28,13 +28,6 @@ spring:
                 regexp: /order-service/**
           uri: lb://order-service
 
-        - id: result-service
-          predicates:
-            - name: Path
-              args:
-                regexp: /result-service/**
-          uri: lb://result-service
-
         - id: medical-service
           predicates:
             - name: Path
